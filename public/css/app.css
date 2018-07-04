@@ -1,0 +1,43 @@
+body {
+                background: black;
+                background-image: url("/assets/omaha.png");
+                background-repeat:no-repeat;
+                -webkit-background-size:cover;
+                -moz-background-size:cover;
+                -o-background-size:cover;
+                overflow: hidden;
+                height: 100%;
+                background-size: cover;
+                font-size: 1.2vw;
+                padding: 1vw;
+                text-shadow: 10px 0 10px rgba(0,0,0,.6);
+            }
+
+			.let-it-snow, .isSnowingContainer, .isNotSnowingContainer{
+			    display: none; /* Hide everything until we know if it's snowing. */
+			  }
+
+			  /* Show snowflakes and snowing container if it's snowing! */
+			.isSnowing .isSnowingContainer,
+			.isSnowing .let-it-snow,
+
+			/* Show not-snowing container if it's NOT snowing. :( */
+			.isNotSnowing .isNotSnowingContainer {
+			display: block;
+			}
+
+html {
+    height: 100%;
+}
+
+.tweet {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+p {
+	color:white;
+	font-family: 'arial', sans-serif;
+	font-style: bold;
+	font-size: 10em;

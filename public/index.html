@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/let-it-snow.css">
+        <link rel="shortcut icon" href="assets/favicon.ico" />
+    </head>
+
+    <body>
+		<p id="loading">Is it snowing in Omaha?</p>
+
+		<div class="isSnowingContainer">
+			<div class="let-it-snow"></div>
+	    	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	    	<script src="js/let-it-snow.min.js"></script>
+	    	<script>$.letItSnow('.let-it-snow', {
+	                stickyFlakes: 'lis-flake--js',
+	                makeFlakes: true,
+	                sticky: true
+	            });
+			</script>
+			<p collectsnow>YAY! SNOW!</p>
+		</div>
+
+		<div class="isNotSnowingContainer">
+			<p>IT'S NOT SNOWING IN OMAHA</p>
+		</div>
+
+    	<script type="text/javascript">
+    		function updateSnowingStatus(isSnowing){
+		      var snowingStatus = document.querySelector("body").classList
+		      var loading = document.getElementById("loading")
+		      if (isSnowing) {
+		        snowingStatus.add("isSnowing");
+		      }
+		      else{
+		        snowingStatus.add("isNotSnowing");
+		      }
+		      loading.remove()
+		    }
+
+		  fetch('/.netlify/functions/app')
+		  .then(response => response.json())
+	      .then(data => updateSnowingStatus(data.snowing))
+		</script>
+    </body>
+
+    <footer>
+    	<div class="isNotSnowingContainer">
+    		<a href="http://twitter.com/home?status=It's not snowing. 😿 Visit snowmaha.com to see the latest Snowmaha status." target="_blank"><img src="assets/twitter.png" width="35" height="35" class="tweet"></a>
+    	</div>
+
+    	<div class="isSnowingContainer">
+    		<a href="http://twitter.com/home?status=Yay! It's snowing!!! ❄️❄️❄️ Visit snowmaha.com to see the latest Snowmaha status." target="_blank"><img src="assets/twitter.png" width="35" height="35" class="tweet"></a>
+    	</div>
+    </footer>
+</html>

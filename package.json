@@ -1,0 +1,28 @@
+{
+  "name": "snowmaha-netlify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "local-web-server": "^2.4.0",
+    "netlify-lambda": "^0.4.0",
+    "request": "^2.87.0",
+    "sha1": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "ws -d public --rewrite '/.netlify/functions/* -> http://localhost:9000/$1'",
+    "start:functions": "netlify-lambda serve functions-source",
+    "build:functions": "netlify-lambda build functions-source"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bethanyhaubert/snowmaha-netlify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bethanyhaubert/snowmaha-netlify/issues"
+  },
+  "homepage": "https://github.com/bethanyhaubert/snowmaha-netlify#readme"
+}
