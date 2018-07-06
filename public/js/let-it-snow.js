@@ -13,7 +13,7 @@
             if (base.options.makeFlakes == true) {
                 // make the main snowflakes to be styled w/ CSS
                 for (var i = 0; i < 100; i++) {
-                	if (base.option.emojiShown){
+                	if (!base.options.emojiShown) {
                 		base.$el.prepend('<span class="lis-flake emoji">🌮</span>');
                 	} else {
                 		base.$el.prepend('<span class="lis-flake"></span>');

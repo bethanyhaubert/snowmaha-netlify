@@ -15,11 +15,11 @@
     </head>
 
     <body>
+		<div class="let-it-snow"></div>
+
 		<p id="loading">Is it snowing in Omaha?</p>
 
 		<div class="isSnowingContainer">
-			<div class="let-it-snow"></div>
-	    
 			<p collectsnow>YAY! SNOW!</p>
 		</div>
 
@@ -41,9 +41,10 @@
 	    <script src="js/let-it-snow.js"></script>
     	<script type="text/javascript">
     		function updateSnowingStatus(isSnowing){
-		      var snowingStatus = document.querySelector("body").classList
-		      var loading = document.getElementById("loading")
-		      var emojiShown = false
+		      var snowingStatus = document.querySelector("body").classList;
+		      var loading = document.getElementById("loading");
+		      var emojiShown = false;
+
 		      if (isSnowing) {
 		        snowingStatus.add("isSnowing");
 		      }
@@ -55,9 +56,9 @@
 		      $.letItSnow('.let-it-snow', {
                 stickyFlakes: 'lis-flake--js',
                 makeFlakes: true,
-                sticky: true
+                sticky: true,
                 emoji: emojiShown
-           	 });
+           	  });
 
 		      loading.remove()
 		    }

@@ -13,7 +13,7 @@ body {
                 text-shadow: 10px 0 10px rgba(0,0,0,.6);
             }
 
-			.let-it-snow, .isSnowingContainer, .isNotSnowingContainer{
+			.isSnowingContainer, .isNotSnowingContainer{
 			    display: none; /* Hide everything until we know if it's snowing. */
 			  }
 
