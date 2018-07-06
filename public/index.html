@@ -19,14 +19,7 @@
 
 		<div class="isSnowingContainer">
 			<div class="let-it-snow"></div>
-	    	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	    	<script src="js/let-it-snow.min.js"></script>
-	    	<script>$.letItSnow('.let-it-snow', {
-	                stickyFlakes: 'lis-flake--js',
-	                makeFlakes: true,
-	                sticky: true
-	            });
-			</script>
+	    
 			<p collectsnow>YAY! SNOW!</p>
 		</div>
 
@@ -34,16 +27,38 @@
 			<p>IT'S NOT SNOWING IN OMAHA</p>
 		</div>
 
+		<footer>
+	    	<div class="isNotSnowingContainer">
+	    		<a href="http://twitter.com/home?status=It's not snowing. 😿 Visit snowmaha.com to see the latest Snowmaha status." target="_blank"><img src="assets/twitter.png" width="35" height="35" class="tweet"></a>
+	    	</div>
+
+	    	<div class="isSnowingContainer">
+	    		<a href="http://twitter.com/home?status=Yay! It's snowing!!! ❄️❄️❄️ Visit snowmaha.com to see the latest Snowmaha status." target="_blank"><img src="assets/twitter.png" width="35" height="35" class="tweet"></a>
+	    	</div>
+    	</footer>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	    <script src="js/let-it-snow.js"></script>
     	<script type="text/javascript">
     		function updateSnowingStatus(isSnowing){
 		      var snowingStatus = document.querySelector("body").classList
 		      var loading = document.getElementById("loading")
+		      var emojiShown = false
 		      if (isSnowing) {
 		        snowingStatus.add("isSnowing");
 		      }
 		      else{
 		        snowingStatus.add("isNotSnowing");
+		        emojiShown = true;
 		      }
+
+		      $.letItSnow('.let-it-snow', {
+                stickyFlakes: 'lis-flake--js',
+                makeFlakes: true,
+                sticky: true
+                emoji: emojiShown
+           	 });
+
 		      loading.remove()
 		    }
 
@@ -52,14 +67,4 @@
 	      .then(data => updateSnowingStatus(data.snowing))
 		</script>
     </body>
-
-    <footer>
-    	<div class="isNotSnowingContainer">
-    		<a href="http://twitter.com/home?status=It's not snowing. 😿 Visit snowmaha.com to see the latest Snowmaha status." target="_blank"><img src="assets/twitter.png" width="35" height="35" class="tweet"></a>
-    	</div>
-
-    	<div class="isSnowingContainer">
-    		<a href="http://twitter.com/home?status=Yay! It's snowing!!! ❄️❄️❄️ Visit snowmaha.com to see the latest Snowmaha status." target="_blank"><img src="assets/twitter.png" width="35" height="35" class="tweet"></a>
-    	</div>
-    </footer>
 </html>

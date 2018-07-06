@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "local-web-server": "^2.4.0",
+    "netlify-cli": "^1.2.2",
     "netlify-lambda": "^0.4.0",
     "request": "^2.87.0",
     "sha1": "^1.1.1"
