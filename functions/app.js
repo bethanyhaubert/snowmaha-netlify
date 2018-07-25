@@ -15408,23 +15408,20 @@ exports.handler = function (event, context, callback) {
 
 	const request = __webpack_require__(86);
 	var sha1 = __webpack_require__(192);
+	var key = process.env.DARK_SKY;
 
-	request('https://api.darksky.net/forecast/b2609cc19093c1afb68f0d7124993c7d/41.2524,-95.9980', function (err, res, body) {
+	request('https://api.darksky.net/forecast/' + key + '/41.2524,-95.9980', function (err, res, body) {
 		if (!err && res.statusCode == 200) {
 
 			var weather = JSON.parse(body);
 			var currentWeather = weather.currently;
 
 			var iconText = currentWeather.icon.toLowerCase();
-			var snow = '';
+			var snow = false;
 
 			if (iconText === 'snow') {
 				snow = true;
-				console.log('snow');
-			} else {
-				snow = false;
-				console.log('fart');
-			}
+			};
 
 			callback(null, {
 				statusCode: 200,
@@ -17212,7 +17209,7 @@ MemoryCookieStore.prototype.getAllCookies = function(cb) {
 /* 89 */
 /***/ (function(module, exports) {
 
-module.exports = {"_args":[["tough-cookie@2.3.4","/Users/bethhaubert/Code/personal/snowmaha-netlify"]],"_from":"tough-cookie@2.3.4","_id":"tough-cookie@2.3.4","_inBundle":false,"_integrity":"sha512-TZ6TTfI5NtZnuyy/Kecv+CnoROnyXn2DN97LontgQpCwsX2XyLYCC0ENhYkehSOwAp8rTQKc/NUIF7BkQ5rKLA==","_location":"/tough-cookie","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"tough-cookie@2.3.4","name":"tough-cookie","escapedName":"tough-cookie","rawSpec":"2.3.4","saveSpec":null,"fetchSpec":"2.3.4"},"_requiredBy":["/request"],"_resolved":"https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.4.tgz","_spec":"2.3.4","_where":"/Users/bethhaubert/Code/personal/snowmaha-netlify","author":{"name":"Jeremy Stashewsky","email":"jstashewsky@salesforce.com"},"bugs":{"url":"https://github.com/salesforce/tough-cookie/issues"},"contributors":[{"name":"Alexander Savin"},{"name":"Ian Livingstone"},{"name":"Ivan Nikulin"},{"name":"Lalit Kapoor"},{"name":"Sam Thompson"},{"name":"Sebastian Mayr"}],"dependencies":{"punycode":"^1.4.1"},"description":"RFC6265 Cookies and Cookie Jar for node.js","devDependencies":{"async":"^1.4.2","string.prototype.repeat":"^0.2.0","vows":"^0.8.1"},"engines":{"node":">=0.8"},"files":["lib"],"homepage":"https://github.com/salesforce/tough-cookie","keywords":["HTTP","cookie","cookies","set-cookie","cookiejar","jar","RFC6265","RFC2965"],"license":"BSD-3-Clause","main":"./lib/cookie","name":"tough-cookie","repository":{"type":"git","url":"git://github.com/salesforce/tough-cookie.git"},"scripts":{"suffixup":"curl -o public_suffix_list.dat https://publicsuffix.org/list/public_suffix_list.dat && ./generate-pubsuffix.js","test":"vows test/*_test.js"},"version":"2.3.4"}
+module.exports = {"_from":"tough-cookie@~2.3.3","_id":"tough-cookie@2.3.4","_inBundle":false,"_integrity":"sha512-TZ6TTfI5NtZnuyy/Kecv+CnoROnyXn2DN97LontgQpCwsX2XyLYCC0ENhYkehSOwAp8rTQKc/NUIF7BkQ5rKLA==","_location":"/tough-cookie","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"tough-cookie@~2.3.3","name":"tough-cookie","escapedName":"tough-cookie","rawSpec":"~2.3.3","saveSpec":null,"fetchSpec":"~2.3.3"},"_requiredBy":["/request"],"_resolved":"https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.4.tgz","_shasum":"ec60cee38ac675063ffc97a5c18970578ee83655","_spec":"tough-cookie@~2.3.3","_where":"/Users/bethanyhaubert/code/first-node-app/node_modules/request","author":{"name":"Jeremy Stashewsky","email":"jstashewsky@salesforce.com"},"bugs":{"url":"https://github.com/salesforce/tough-cookie/issues"},"bundleDependencies":false,"contributors":[{"name":"Alexander Savin"},{"name":"Ian Livingstone"},{"name":"Ivan Nikulin"},{"name":"Lalit Kapoor"},{"name":"Sam Thompson"},{"name":"Sebastian Mayr"}],"dependencies":{"punycode":"^1.4.1"},"deprecated":false,"description":"RFC6265 Cookies and Cookie Jar for node.js","devDependencies":{"async":"^1.4.2","string.prototype.repeat":"^0.2.0","vows":"^0.8.1"},"engines":{"node":">=0.8"},"files":["lib"],"homepage":"https://github.com/salesforce/tough-cookie","keywords":["HTTP","cookie","cookies","set-cookie","cookiejar","jar","RFC6265","RFC2965"],"license":"BSD-3-Clause","main":"./lib/cookie","name":"tough-cookie","repository":{"type":"git","url":"git://github.com/salesforce/tough-cookie.git"},"scripts":{"suffixup":"curl -o public_suffix_list.dat https://publicsuffix.org/list/public_suffix_list.dat && ./generate-pubsuffix.js","test":"vows test/*_test.js"},"version":"2.3.4"}
 
 /***/ }),
 /* 90 */

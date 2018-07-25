@@ -1,6 +1,5 @@
 body {
                 background: black;
-                background-image: url("/assets/omaha.png");
                 background-repeat:no-repeat;
                 -webkit-background-size:cover;
                 -moz-background-size:cover;
@@ -13,18 +12,27 @@ body {
                 text-shadow: 10px 0 10px rgba(0,0,0,.6);
             }
 
-			.isSnowingContainer, .isNotSnowingContainer{
-			    display: none; /* Hide everything until we know if it's snowing. */
-			  }
+.isSnowingContainer, .isNotSnowingContainer{
+    display: none; /* Hide everything until we know if it's snowing. */
+  }
 
-			  /* Show snowflakes and snowing container if it's snowing! */
-			.isSnowing .isSnowingContainer,
-			.isSnowing .let-it-snow,
+  /* Show snowflakes and snowing container if it's snowing! */
+.isSnowing .isSnowingContainer,
+.isSnowing .let-it-snow,
 
-			/* Show not-snowing container if it's NOT snowing. :( */
-			.isNotSnowing .isNotSnowingContainer {
-			display: block;
-			}
+/* Show not-snowing container if it's NOT snowing. :( */
+.isNotSnowing .isNotSnowingContainer {
+display: block;
+}
+
+.isSnowing {
+    background-image: url("/assets/omaha.png");
+}
+
+.isNotSnowing {
+    background-image: url("/assets/omaha.jpg");
+
+}
 
 html {
     height: 100%;
